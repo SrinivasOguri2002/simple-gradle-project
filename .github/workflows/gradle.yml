@@ -35,7 +35,7 @@ jobs:
         run: chmod +x gradlew
       - name: Run tests
         run: |
-         if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
             ./gradlew test
           else
             ./gradlew test --tests "com.example.FirstTest"
